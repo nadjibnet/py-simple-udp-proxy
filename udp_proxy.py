@@ -47,8 +47,6 @@ def recv():
             break
         logger.debug('received: {0!r} from {1}'.format(data, addr))
         sock_dst.sendto(data, dst_addr)
-        data, _  = sock_dst.recvfrom(65565)
-        sock_src.sendto(data, addr)
 
     sock_src.close()
     sock_dst.close()
